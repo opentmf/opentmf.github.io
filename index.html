@@ -12,9 +12,107 @@
     <p>
       Index:
       <ul>
+        <li>
+          <a href="#api">Application Programming Interface (API)</a>
+          <ul>
+            <li><a href="api_core">Core</a></li>
+            <li><a href="api_drv">Driver</a></li>
+          </ul>
+        </li>
         <li><a href="#development">Development</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+    </p>
+    <h2 id="api">Application Programming Interface (API)</h2>
+    <p>
+      <tt>#include &lt;<a href="https://github.com/opentmf/libopentmf/blob/master/src/opentmf.h">opentmf.h</a>&gt; // Include complete OpenTMF API.</tt>
+    </p>
+    <p>
+      The API is work in progress and may change.
+    </p>
+    <h3 id="api_core">Core</h3>
+    <p>
+      <tt>#include &lt;<a href="https://github.com/opentmf/libopentmf/blob/master/src/opentmf/core.h">opentmf/core.h</a>&gt;</tt>
+    </p>
+    <h4>opentmf_init</h4>
+    <pre class="prototype"><span class="keyword">int</span> opentmf_init(<span class="keyword">struct</span> opentmf_context** <span class="param">ctx</span>)</pre>
+    <h5>Parameters</h5>
+    <dl>
+      <dt><tt>ctx</tt></dt>
+      <dd>Pointer to context handle.</dd>
+    </dl>
+    <h5>Returns</h5>
+    <p>
+      Status code.
+    </p>
+    <h4>opentmf_exit</h4>
+    <pre class="prototype"><span class="keyword">int</span> opentmf_exit(<span class="keyword">struct</span> opentmf_context* <span class="param">ctx</span>)</pre>
+    <h5>Parameters</h5>
+    <dl>
+      <dt><tt>ctx</tt></dt>
+      <dd>Context handle.</dd>
+    </dl>
+    <h5>Returns</h5>
+    <p>
+      Status code.
+    </p>
+    <h4>opentmf_get_version</h4>
+    <pre class="prototype"><span class="keyword">const</span> <span class="keyword">struct</span> opentmf_version* opentmf_get_version()</pre>
+    <h5>Returns</h5>
+    <p>
+      Pointer to struct with library version information.
+    </p>
+    <h4>opentmf_open</h4>
+    <pre class="prototype"><span class="keyword">int</span> opentmf_open(<span class="keyword">struct</span> opentmf_context* <span class="param">ctx</span>, <span class="keyword">const</span> <span class="keyword">char</span>* <span class="param">url</span>, <span class="keyword">struct</span> opentmf_handle** <span class="param">handle</span>)</pre>
+    <h5>Parameters</h5>
+    <dl>
+      <dt><tt>ctx</tt></dt>
+      <dd>Context handle.</dd>
+      <dt><tt>url</tt></dt>
+      <dd>Pointer to <tt>NULL</tt> terminated URL identifing the driver or device.</dd>
+      <dt><tt>handle</tt></dt>
+      <dd>Pointer to driver or device handle.</dd>
+    </dl>
+    <h5>Returns</h5>
+    <p>
+      Status code.
+    </p>
+    <h4>opentmf_close</h4>
+    <pre class="prototype"><span class="keyword">int</span> opentmf_close(<span class="keyword">struct</span> opentmf_handle* <span class="param">handle</span>)</pre>
+    <h5>Parameters</h5>
+    <dl>
+      <dt><tt>handle</tt></dt>
+      <dd>Driver or device handle.</dd>
+    </dl>
+    <h5>Returns</h5>
+    <p>
+      Status code.
+    </p>
+    <h4>opentmf_get_handle_type</h4>
+    <pre class="prototype"><span class="keyword">int</span> opentmf_get_handle_type(<span class="keyword">struct</span> opentmf_handle* <span class="param">handle</span>)</pre>
+    <h5>Parameters</h5>
+    <dl>
+      <dt><tt>handle</tt></dt>
+      <dd>Driver or device handle.</dd>
+    </dl>
+    <h5>Returns</h5>
+    <p>
+      Handle type if successful, <tt>HT_INVALID</tt> on error.
+    </p>
+    <h3 id="api_drv">Driver</h3>
+    <p>
+      <tt>#include &lt;<a href="https://github.com/opentmf/libopentmf/blob/master/src/opentmf/driver.h">opentmf/driver.h</a>&gt;</tt>
+    </p>
+    <h4>opentmf_drv_get_info</h4>
+    <pre class="prototype"><span class="keyword">const</span> <span class="keyword">struct</span> opentmf_driver_info* opentmf_drv_get_info(<span class="keyword">struct</span> opentmf_handle* <span class="param">handle</span>)</pre>
+    <h5>Parameters</h5>
+    <dl>
+      <dt><tt>handle</tt></dt>
+      <dd>Driver handle.</dd>
+    </dl>
+    <h5>Returns</h5>
+    <p>
+      Pointer to struct with driver information or <tt>NULL</tt> on error.
     </p>
     <h2 id="development">Development</h2>
     <p>

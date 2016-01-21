@@ -3,3 +3,13 @@ body
   font-family: Helvetica,sans-serif;
   font-size: 13px;
 }
+
+pre.prototype span.keyword
+{
+  color: blue;
+}
+
+pre.prototype span.param
+{
+  color: purple;
+}
