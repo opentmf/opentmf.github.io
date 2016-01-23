@@ -4,12 +4,47 @@ body
   font-size: 13px;
 }
 
-pre.prototype span.keyword
+pre.code span.keyword
 {
   color: blue;
 }
 
-pre.prototype span.param
+pre.code span.param
 {
   color: purple;
+}
+
+pre.code span.comment
+{
+  color: green;
+}
+
+h1
+{
+  font-size: 250%;
+}
+
+h2
+{
+  font-size: 200%;
+}
+
+h3
+{
+  font-size: 150%;
+}
+
+h4
+{
+  font-size: 120%;
+}
+
+h5
+{
+  font-size: 105%;
+}
+
+h6
+{
+  font-size: 100%;
 }
