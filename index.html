@@ -58,6 +58,44 @@
     <p>
       Pointer to struct with library version information.
     </p>
+    <h4>opentmf_get_status_str</h4>
+    <pre class="code"><span class="keyword">const</span> <span class="keyword">char</span>* opentmf_get_status_str(<span class="keyword">int</span> <span class="param">status</span>)</pre>
+    <h5>Parameters</h5>
+    <dl>
+      <dt><tt>status</tt></dt>
+      <dd>Status code.</dd>
+    </dl>
+    <h5>Returns</h5>
+    <p>
+      Pointer to <tt>NULL</tt> terminated status code description.
+    </p>
+    <h4>opentmf_get_driver_list</h4>
+    <pre class="code"><span class="keyword">int</span> opentmf_get_driver_list(<span class="keyword">struct</span> opentmf_context* <span class="param">ctx</span>, <span class="keyword">char</span>*** <span class="param">list</span>)</pre>
+    <h5>Parameters</h5>
+    <dl>
+      <dt><tt>ctx</tt></dt>
+      <dd>Context handle.</dd>
+      <dt><tt>list</tt></dt>
+      <dd>Pointer to location for a list of driver names. Must be later freed using <tt>opentmf_free_driver_list()</tt>.</dd>
+    </dl>
+    <h5>Returns</h5>
+    <p>
+      Status code.
+    </p>
+    <h4>opentmf_free_driver_list</h4>
+    <pre class="code"><span class="keyword">int</span> opentmf_free_driver_list(<span class="keyword">struct</span> opentmf_context* <span class="param">ctx</span>, <span class="keyword">char</span>** <span class="param">list</span>)</pre>
+    <h5>Parameters</h5>
+    <dl>
+      <dt><tt>ctx</tt></dt>
+      <dd>Context handle.</dd>
+      <dt><tt>list</tt></dt>
+      <dd>The driver name list to free.</dd>
+    </dl>
+    <h5>Returns</h5>
+    <p>
+      Status code.
+    </p>
+
     <h4>opentmf_open</h4>
     <pre class="code"><span class="keyword">int</span> opentmf_open(<span class="keyword">struct</span> opentmf_context* <span class="param">ctx</span>, <span class="keyword">const</span> <span class="keyword">char</span>* <span class="param">url</span>, <span class="keyword">struct</span> opentmf_handle** <span class="param">handle</span>)</pre>
     <h5>Parameters</h5>
